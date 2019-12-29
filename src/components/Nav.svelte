@@ -1,4 +1,12 @@
 <script>
+	export const items = [
+		{ endpoint: "people", label: "People" },
+		{ endpoint: "films", label: "Films" },
+		{ endpoint: "starships", label: "Starships" },
+		{ endpoint: "vehicles", label: "Vehicles" },
+		{ endpoint: "species", label: "Species" },
+		{ endpoint: "planets", label: "Planets" },
+	]
 	export let segment;
 </script>
 
@@ -50,11 +58,15 @@
 
 <nav>
 	<ul>
-		<li><a class:selected='{segment === undefined}' href='.'>home</a></li>
-		<li><a class:selected='{segment === "about"}' href='about'>about</a></li>
-
+		<li><a class:selected='{segment === undefined}' href='.'>Homes</a></li>
+		{#each items as item}
+			<li><a class:selected='{segment === item.endpoint}' href="{item.endpoint}">
+				{item.label}
+			</a></li>
+		{/each}
+		<li><a class:selected='{segment === "about"}' href='about'>About</a></li>
 		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 		     the blog data when we hover over the link or tap it on a touchscreen -->
-		<li><a rel=prefetch class:selected='{segment === "blog"}' href='blog'>blog</a></li>
+		<!-- <li><a rel=prefetch class:selected='{segment === "blog"}' href='blog'>blog</a></li> -->
 	</ul>
 </nav>

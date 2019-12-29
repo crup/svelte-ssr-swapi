@@ -1,3 +1,13 @@
+<script>
+	export const items = [
+		{ path: "people", label: "People" },
+		{ path: "films", label: "Films" },
+		{ path: "starships", label: "Starships" },
+		{ path: "vehicles", label: "Vehicles" },
+		{ path: "species", label: "Species" },
+		{ path: "planets", label: "Planets" },
+	]
+</script>
 <style>
 	h1, figure, p {
 		text-align: center;
@@ -30,17 +40,28 @@
 			font-size: 4em;
 		}
 	}
+	nav {
+		display: flex;
+		justify-content: center;
+	}
+	nav a{
+		margin-right: 30px;
+	}
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>StarWars</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<h1>StarWars</h1>
 
 <figure>
 	<img alt='Borat' src='great-success.png'>
-	<figcaption>HIGH FIVE!</figcaption>
 </figure>
+<nav>
+{#each items as item}
+	<a href="{item.path}">{item.label}</a>
+{/each}
+</nav>
 
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<p><strong>Do your vagjin hang like sleeve of wizard?</strong></p>

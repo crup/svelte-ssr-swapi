@@ -63,7 +63,6 @@
     {/if}
     {#if cards}
         {#each cards as card}
-            <p>ssr cards</p>
             <Card 
                 titleKey={config.titleKey} 
                 data={card}

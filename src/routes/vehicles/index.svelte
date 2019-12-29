@@ -18,8 +18,8 @@
         items: [
 			{ key: "model", label: (v) => `Model: ${v}` },
 			{ key: "manufacturer", label: (v) => `Manufacturer: ${v}` },
-			{ key: "starship_class", label: (v) => `Starship Class: ${v}` },
-			{ key: "hyperdrive_rating", label: (v) => `Hyperdrive Rating: ${v}` },
+			{ key: "vehicle_class", label: (v) => `Vehicles Class: ${v}` },
+			{ key: "consumables", label: (v) => `Consumables: ${v}` },
 			{ key: "length", label: (v) => `length: ${v}` },
 			{ key: "passengers", label: (v) => `Passengers: ${v}` },
 			{ key: "cargo_capacity", label: (v) => `Cargo Capacity: ${v}` },

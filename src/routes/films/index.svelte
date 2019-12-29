@@ -1,7 +1,7 @@
 <script context="module">
     import commonPagesPreloader from "../../preloaders/common-pages";
-	export function preload(props) {
-        return commonPagesPreloader.call(this, props);
+	export function preload(page) {
+        return commonPagesPreloader.call(this, page);
 	}
 </script>
 

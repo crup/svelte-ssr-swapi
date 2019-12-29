@@ -1,5 +1,15 @@
+<script context="module">
+    import commonPagesPreloader from "../../preloaders/common-pages";
+	export function preload(props) {
+        return commonPagesPreloader.call(this, props);
+	}
+</script>
+
 <script>
-    import CardList from '../components/CardList.svelte';
+	import CardList from '../../components/CardList.svelte';
+	export let cards;
+	export let isLoading;
+
     const config = {
         title: "Planets",
         endpoint: "planets",
@@ -14,8 +24,9 @@
 			{ key: "surface_water", label: (v) => `Surface Water: ${v}` },
 			{ key: "population", label: (v) => `Population: ${v}` },
 			{ key: "gravity", label: (v) => `Gravity: ${v}` }
-		]
+		],
+		cards
     };
 </script>
 
-<CardList config={config} />
+<CardList isLoading={isLoading} config={config} />

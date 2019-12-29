@@ -1,5 +1,15 @@
+<script context="module">
+    import commonPagesPreloader from "../../preloaders/common-pages";
+	export function preload(props) {
+        return commonPagesPreloader.call(this, props);
+	}
+</script>
+
 <script>
-    import CardList from '../components/CardList.svelte';
+	import CardList from '../../components/CardList.svelte';
+	export let cards;
+	export let isLoading;
+	
     const config = {
         title: "Vehicles",
         endpoint: "vehicles",
@@ -14,8 +24,9 @@
 			{ key: "passengers", label: (v) => `Passengers: ${v}` },
 			{ key: "cargo_capacity", label: (v) => `Cargo Capacity: ${v}` },
 			{ key: "cost_in_credits", label: (v) => `Cost: ${v}` }
-		]
+		],
+		cards
     };
 </script>
 
-<CardList config={config} />
+<CardList isLoading={isLoading} config={config} />

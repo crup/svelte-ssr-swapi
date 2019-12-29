@@ -1,5 +1,15 @@
+<script context="module">
+    import commonPagesPreloader from "../../preloaders/common-pages";
+	export function preload(props) {
+        return commonPagesPreloader.call(this, props);
+	}
+</script>
+
 <script>
-    import CardList from '../components/CardList.svelte';
+	import CardList from '../../components/CardList.svelte';
+	export let cards;
+	export let isLoading;
+	
     const config = {
         title: "Species",
         endpoint: "species",
@@ -14,8 +24,9 @@
 			{ key: "eye_colors", label: (v) => `Eye colors: ${v}` },
 			{ key: "average_lifespan", label: (v) => `Lifespan: ${v}` },
 			{ key: "language", label: (v) => `Language: ${v}` }
-		]
+		],
+		cards
     };
 </script>
 
-<CardList config={config} />
+<CardList isLoading={isLoading} config={config} />

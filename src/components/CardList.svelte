@@ -2,17 +2,19 @@
     import Card from '../components/Card.svelte';
     import CardLoading from '../components/CardLoading.svelte';
     export let config;
-    const cardList = async ()=>{
-        const baseUrl = "https://swapi.co/api/";
-        const response = await fetch(`${baseUrl}${config.endpoint}`)
-        if(response.ok) {
-            const responseJson = await response.json();
-            return responseJson.results;
-        } else {
-            throw new Error("Something went wrong");
-        }
-    }
-    const asyncCardList = cardList();
+    export let isLoading;
+
+    // const cardList = async ()=>{
+    //     const baseUrl = "https://swapi.co/api/";
+    //     const response = await fetch(`${baseUrl}${config.endpoint}`)
+    //     if(response.ok) {
+    //         const responseJson = await response.json();
+    //         return responseJson.results;
+    //     } else {
+    //         throw new Error("Something went wrong");
+    //     }
+    // }
+    // const asyncCardList = cardList();
 </script>
 
 <style>
@@ -30,7 +32,7 @@
 
 <h1>{config.title}</h1>
 <div class="card-holder">
-    {#await asyncCardList}
+    <!-- {#await asyncCardList}
         {#each (new Array(10)) as card}
             <CardLoading />
         {/each}
@@ -45,5 +47,19 @@
         {/each}
     {:catch error}
         <p style="color: red">{error.message}</p>
-    {/await}
+    {/await} -->
+    {#if isLoading}
+        {#each (new Array(10)) as card}
+            <CardLoading />
+        {/each}
+    {:else}
+        {#each config.cards as card}
+            <Card 
+                titleKey={config.titleKey} 
+                data={card}
+                items={config.items}
+                icon={config.icon}
+            />
+        {/each}
+    {/if}
 </div>

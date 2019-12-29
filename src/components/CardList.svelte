@@ -7,7 +7,6 @@
         const response = await fetch(`${baseUrl}${config.endpoint}`)
         if(response.ok) {
             const responseJson = await response.json();
-            console.log(responseJson.results)
             return responseJson.results;
         } else {
             throw new Error("Something went wrong");

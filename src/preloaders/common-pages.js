@@ -2,6 +2,8 @@ import { isSSR } from "../store";
 
 export default function ({ path }) {
     let isSSRPage;
+    const baseUrl = "https://swapi.co/api";
+    const apiPromise = this.fetch(`${baseUrl}${path}`);
 
     const unsubscribe = isSSR.subscribe(value => {
         isSSRPage = value;
@@ -9,12 +11,10 @@ export default function ({ path }) {
     unsubscribe();
     
     if(!isSSRPage) {
-        return { cards: undefined };
+        return { cards: apiPromise };
     }
 
-    const baseUrl = "https://swapi.co/api";
-    return this.fetch(`${baseUrl}${path}`)
-        .then(r => r.json())
+    return apiPromise.then(r => r.json())
         .then(cards => {
             return { cards: cards.results };
         }

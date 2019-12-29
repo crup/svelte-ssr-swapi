@@ -11,10 +11,9 @@
     onMount(() => {
         if($isSSR) {
             isSSR.set(false);
-        } else {
+        } else if(cards instanceof Promise) {
             cardList = async () => {
-                const baseUrl = "https://swapi.co/api/";
-                const response = await fetch(`${baseUrl}${config.endpoint}`)
+                const response = await cards
                 if(response.ok) {
                     const responseJson = await response.json();
                     return responseJson.results;

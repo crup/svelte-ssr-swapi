@@ -4,13 +4,22 @@
     export let titleKey;
     export let items;
     export let icon;
+
+    const additionalItems = [
+        { key: "characters", icon: "👨‍👩‍👦‍👦" },
+        { key: "planets", icon: "🌍" },
+        { key: "films", icon: "📽" },
+        { key: "vehicles", icon: "🚙" },
+        { key: "starships", icon: "🚀" },
+        { key: "pilots", icon: "🤖" },
+    ]
 </script>
 
 <style>
 .card {
     background-color: #ffffff;
     margin: 20px 0px 20px 20px;
-    width: 250px;
+    width: 320px;
 }
 .people header {
     background-color: #efefef;
@@ -59,28 +68,35 @@ ul.card-details li:last-child, ul.card-details ul {
     -ms-flex-pack: justify;
     justify-content: flex-start;
     padding: 15px;
+    height: 18px;
 }
 ul.card-details > ul li span {
     position: absolute;
-    font-size: 11px;
+    font-size: 10px;
     right: -8px;
     top: -8px;
     background: #999;
     color: #fff;
     border-radius: 82px;
-    width: 20px;
+    width: 19px;
     height: 19px;
     text-align: center;
     line-height: 19px;
 }
 header i {
     min-width: 30px;
+    font-style: normal;
+    font-size: 20px;
+}
+li i {
+    font-style: normal;
+    font-size: 24px;
 }
 </style>
 
 <div class="card people">
   <header>
-    <i class="fas {icon}"></i>
+    <i>{icon}</i>
     <h3 class="card-title">{data[titleKey]}</h3>
   </header>
   <ul class="card-details">
@@ -88,42 +104,14 @@ header i {
         <li>{item.label(data[item.key])}</li>
     {/each}
     <ul>
-    {#if data.characters && data.characters.length}
-        <li>
-            <i class="fas fa-users"></i>
-            <span>{data.characters.length}</span>
-        </li>
-    {/if}
-    {#if data.planets && data.planets.length}
-        <li>
-            <i class="fas fa-globe-asia"></i>
-            <span>{data.planets.length}</span>
-        </li>
-    {/if}
-    {#if data.films && data.films.length}
-        <li>
-            <i class="fas fa-video"></i>
-            <span>{data.films.length}</span>
-        </li>
-    {/if}
-    {#if data.vehicles && data.vehicles.length}
-        <li>
-            <i class="fas fa-truck-monster"></i>
-            <span>{data.vehicles.length}</span>
-        </li>
-    {/if}
-    {#if data.starships && data.starships.length}
-        <li>
-            <i class="fas fa-space-shuttle"></i>
-            <span>{data.starships.length}</span>
-        </li>
-    {/if}
-    {#if data.pilots && data.pilots.length}
-        <li>
-            <i class="fas fa-user-astronaut"></i>
-            <span>{data.pilots.length}</span>
-        </li>
-    {/if}
+        {#each additionalItems as { key, icon }}
+            {#if data[key] && data[key].length}
+                <li>
+                    <i>{icon}</i>
+                    <span>{data[key].length}</span>
+                </li>
+            {/if}
+        {/each}
     </ul>
   </ul>
 </div>

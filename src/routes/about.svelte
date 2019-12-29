@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>About</title>
+	<title>Starwars: About</title>
 </svelte:head>
 
 <h1>About</h1>

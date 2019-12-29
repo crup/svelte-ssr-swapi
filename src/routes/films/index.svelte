@@ -10,10 +10,10 @@
     export let cards;
     
     const config = {
-        title: "Films",
+        title: "Starwars: Films 🎬🍿📽",
         endpoint: "films",
         titleKey: "title",
-        icon: "fa-video",
+        icon: "🍿",
         items: [
 			{ key: "director", label: (v) => `Director: ${v}` },
 			{ key: "producer", label: (v) => `Producer: ${v}` },

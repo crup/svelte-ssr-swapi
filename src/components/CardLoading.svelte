@@ -2,7 +2,7 @@
 .card {
     background-color: #ffffff;
     margin: 20px 0px 20px 20px;
-    width: 250px;
+    width: 320px;
 }
 .people header {
     background-color: #efefef;
@@ -46,6 +46,7 @@ ul.card-details li:last-child {
     -ms-flex-pack: justify;
     justify-content: flex-start;
     padding: 15px;
+    height: 18px;
 }
 
 .shine {
@@ -74,7 +75,9 @@ ul.card-details li:last-child {
 }
 
 header i {
-    min-width: 30px;
+  min-width: 30px;
+  font-size: 24px;
+  font-style: normal;
 }
 
 @keyframes placeholderShimmer {
@@ -90,8 +93,8 @@ header i {
 
 <div class="card people">
   <header>
-    <i class="fas fa-spinner fa-spin"></i>
-    <h3 class="card-title">Loading...</h3>
+    <i>👺</i>
+    <h3 class="card-title">🤓😖🤒</h3>
   </header>
   <ul class="card-details">
     <li><div class="shine lines"></div></li>

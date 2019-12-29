@@ -10,10 +10,10 @@
     export let cards;
     
     const config = {
-        title: "People",
+        title: "Starwars: People 👶👦👩",
         endpoint: "people",
         titleKey: "name",
-        icon: "fa-users",
+        icon: "🙄",
         items: [
             { key: "height", label: (v) => `Height: ${v}cm` },
             { key: "mass", label: (v) => `Weight: ${v}kg` },

@@ -10,10 +10,10 @@
 	export let cards;
 	
     const config = {
-        title: "Vehicles",
+        title: "Starwars: Vehicles 🚙🏍🚲",
         endpoint: "vehicles",
 		titleKey: "name",
-		icon: "fa-truck-monster",
+		icon: "🏍",
         items: [
 			{ key: "model", label: (v) => `Model: ${v}` },
 			{ key: "manufacturer", label: (v) => `Manufacturer: ${v}` },

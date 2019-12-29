@@ -10,10 +10,10 @@
 	export let cards;
 
     const config = {
-        title: "Planets",
+        title: "Starwars: Planets 🌍🌕🇲🇭",
         endpoint: "planets",
 		titleKey: "name",
-		icon: "fa-globe-asia",
+		icon: "🌍",
         items: [
 			{ key: "rotation_period", label: (v) => `Rotation Period: ${v}` },
 			{ key: "orbital_period", label: (v) => `Orbital Period: ${v}` },

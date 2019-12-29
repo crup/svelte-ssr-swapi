@@ -10,10 +10,10 @@
 	export let cards;
 	
     const config = {
-        title: "Species",
+        title: "Starwars: Species 🤖👽👾",
         endpoint: "species",
 		titleKey: "name",
-		icon: "fab fa-reddit-alien",
+		icon: "👽",
         items: [
 			{ key: "classification", label: (v) => `Classification: ${v}` },
 			{ key: "designation", label: (v) => `Designation: ${v}` },

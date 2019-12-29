@@ -10,10 +10,10 @@
 	export let cards;
 	
     const config = {
-        title: "Starships",
+        title: "Starwars: Starships 🚀🚀🚀",
         endpoint: "starships",
 		titleKey: "name",
-		icon: "fa-space-shuttle",
+		icon: "🚀",
         items: [
 			{ key: "model", label: (v) => `Model: ${v}` },
 			{ key: "manufacturer", label: (v) => `Manufacturer: ${v}` },

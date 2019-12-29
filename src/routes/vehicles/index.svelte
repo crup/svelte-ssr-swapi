@@ -1,5 +1,5 @@
 <script context="module">
-    import commonPagesPreloader from "../../preloaders/common-pages";
+	import commonPagesPreloader from "../../preloaders/common-pages";
 	export function preload(props) {
         return commonPagesPreloader.call(this, props);
 	}
@@ -8,7 +8,6 @@
 <script>
 	import CardList from '../../components/CardList.svelte';
 	export let cards;
-	export let isLoading;
 	
     const config = {
         title: "Vehicles",
@@ -29,4 +28,4 @@
     };
 </script>
 
-<CardList isLoading={isLoading} config={config} />
+<CardList config={config} />

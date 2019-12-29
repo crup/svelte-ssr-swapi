@@ -8,7 +8,6 @@
 <script>
 	import CardList from '../../components/CardList.svelte';
 	export let cards;
-	export let isLoading;
 	
     const config = {
         title: "Starships",
@@ -29,4 +28,4 @@
     };
 </script>
 
-<CardList isLoading={isLoading} config={config} />
+<CardList config={config} />

@@ -38,6 +38,7 @@
 
 <svelte:head>
 	<title>{config.title}</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </svelte:head>
 
 <h1>{config.title}</h1>

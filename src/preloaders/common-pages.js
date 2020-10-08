@@ -3,7 +3,7 @@ import { isSSR } from "../store";
 export default function ({ path }) {
     let isSSRPage;
     const baseUrl = "https://swapi.dev/api";
-    const apiPromise = this.fetch(`${baseUrl}${path}`);
+    const apiPromise = this.fetch(`${baseUrl}${path}/`);
 
     const unsubscribe = isSSR.subscribe(value => {
         isSSRPage = value;
